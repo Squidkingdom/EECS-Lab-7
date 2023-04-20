@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<script>
+    var red = 30
+    var blue = 30
+    var green = 30
+    var width = 10
+    function showVal(newVal) {
+        switch (newVal.id) {
+            case "red":
+                red = newVal.value
+                break
+            case "blue":
+                blue = newVal.value
+                break
+            case "green":
+                green = newVal.value
+                break
+            case "width":
+                width = newVal.value
+                break
+
+        }
+        document.getElementById("valBox").style.color = "rgb(" + red + "," + green + "," + blue + ")"
+        document.getElementById("box").style.borderColor = "rgb(" + red + "," + green + "," + blue + ")"
+        document.getElementById("width").style.accentColor = "rgb(" + red + "," + green + "," + blue + ")"
+        document.getElementById("box").style.borderWidth = width + "px"
+
+        console.log(width)
+
+    }
+
+</script>
+<style>
+    .slider::-moz-range-thumb {
+        color: red;
+    }
+
+    .red {
+        accent-color: red;
+    }
+
+    .green {
+        accent-color: green;
+    }
+
+    .blue {
+        accent-color: rgb(22, 115, 255);
+
+    }
+
+    .dummy {
+        color: rgb(30, 30, 30);
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .box {
+        width: fit-content;
+        border-width: 10px;
+        border-color: rgb(30, 30, 30);
+        border-style: solid;
+    }
+
+    p {
+        margin: 0;
+        padding-left: 3px;
+        float: left;
+    }
+
+    .tb {
+        width: 50px;
+        padding-left: 3px;
+        padding-right: 3pxs;
+    }
+
+    .width {
+        float: left;
+        accent-color: rgb(30, 30, 30);
+    }
+
+    input[type="text"]::placeholder {
+                 
+                 /* Firefox, Chrome, Opera */
+                 text-align: center;
+    }
+
+    .tbs {
+        padding-top: 7px;
+        display: none;
+    }
+</style>
+
+<body>
+    <div class="box" id="box">
+        <h1 class="dummy" id="valBox">Rock Chalk</h1>
+    </div>
+    <input type="range" value="30" min="0" max="255" class="red" id="red" oninput="showVal(this)">
+    <input type="range" value="30" min="0" max="255" class="green" id="green" oninput="showVal(this)">
+    <input type="range" value="30" min="0" max="255" class="blue" id="blue" oninput="showVal(this)"> <br>
+    <div>
+        <input type="range" value="10" min="0" max="20" class="width" id="width" oninput="showVal(this)">
+        <p></p> - Width</p>
+    </div><br>
+    <button onclick="document.getElementById('tbs').style.display = 'block'">Show boring text boxes</button>
+    <div id="tbs" class="tbs">
+        <input type="text" placeholder="Red" class="red, tb" id="red" onchange="showVal(this)">
+        <input type="text" placeholder="Green" class="green tb" id="green" onchange="showVal(this)">
+        <input type="text" placeholder="Blue" class="blue tb" id="blue" onchange="showVal(this)">
+        <input type="text" placeholder="Width" class="tb" id="width" onchange="showVal(this)">
+
+    </div>
+
+
+</body>
+
+</html>

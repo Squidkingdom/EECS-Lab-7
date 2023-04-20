@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+    <body>
+        <style>
+            .btn {
+                display: none;
+                margin-top: 5px;
+            }
+        </style>
+        <script>
+        var q = 0
+        lastPass = ""
+        function btn(value){
+            document.getElementById('pswd').value = ""
+            switch (q) {
+                case 0:
+                    q = 1;
+                    document.getElementById('txt').innerHTML = "Please re-enter password:";
+                    lastPass = value
+                    break
+                case 1:
+                    q = 0
+                    if (lastPass == value){
+                        document.getElementById('txt').innerHTML = "Passwords matched!"
+                        document.getElementById('btn').style.display = "block"
+                    }else{
+                        document.getElementById('txt').innerHTML = "Passwords mis-matched! Try again"
+                        document.getElementById('btn').style.display = 'block'
+                    }
+                    break
+            }
+        }
+    </script>
+        <h1> Password Checkers</h1>
+        <p id="txt">Please enter password:</p>
+        <input type="password" onchange="btn(this.value)" id="pswd"  placeholder="Password">
+        
+        <button id='btn' class="btn" onclick="location.reload()">Refresh</button>
+    </body>
+</html>

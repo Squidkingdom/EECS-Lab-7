@@ -1,0 +1,50 @@
+.pfp-container {
+    padding: 2px;
+}
+
+.floater {
+    width: auto;
+    float: left;
+}
+.pfp {
+    width: auto;
+    float: right;
+    margin-right: 50;
+}
+
+.red {
+    color: crimson;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.blue {
+    color: blue;
+}
+
+p {
+    margin-top: 2px;
+    margin-bottom: 30px;
+}
+
+a { 
+    margin-bottom: 30px;
+    color: black;
+    margin-top: 2px;
+}
+
+
+h3 {
+
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.info-block {
+    margin-left: 10px;
+    margin-bottom: 30px;
+}
+
+.indent {
+    margin-left: 10px;
+}
